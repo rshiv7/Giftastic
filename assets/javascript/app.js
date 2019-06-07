@@ -4,7 +4,7 @@
 
 
 var buttonsHTML = '';
-var TvArray = [' TheOffice', 'NewGirl', 'Parks and Recreation', 'Rick and Morty', 'Greys Anatomy', 'Friends', 'Lizzie Maguire', 'Spongebob Squarepants', 'HowIMetYourMother', 'Suits'];
+var TvArray = ['The Office', 'New Girl', 'Parks and Recreation', 'Rick and Morty', 'Greys Anatomy', 'Friends', 'Lizzie Maguire', 'Spongebob Squarepants', 'How I Met Your Mother', 'Suits'];
 var newTvValue;
 var apiKey = "B89D9mNHa0BwnABa2bpkoBj1xT8itF9V";
 var searchTv;
@@ -13,7 +13,7 @@ var giphyArray = [];
 
 function generateButtons() {
     for (var i = 0; i < TvArray.length; i++) {
-        buttonsHTML += "<button class='btn btn-lrg btn-primary TvShow-buttons' data-TvShow=" + TvArray[i] + ">" + TvArray[i] + "</button>";
+        buttonsHTML += "<button class='btn btn-lrg btn-primary TvShow-buttons' data-TvShow=" + TvArray[i].split(" ").join("+") + ">" + TvArray[i] + "</button>";
     }
     $('#TvShow-buttons-container').html(buttonsHTML);
 }
@@ -25,7 +25,12 @@ $(document).ready(function () {
     $('body').on('click', '#add-TvShow', function (event) {
         event.preventDefault();
         newTvValue = $('#TvShow-input').val();
-        newButton = "<button class='btn btn-lrg btn-primary TvShow-buttons' data-TvShow=" + newTvValue + ">" + newTvValue + "</button>";
+        newButton = $("<button class='btn btn-lrg btn-primary TvShow-buttons'>" + newTvValue + "</button>");
+        newButton.attr("data-Tvshow", newTvValue.split(" ").join("+"));
+        // "Parks and Recreation"
+        // ["Parks", "and", "recreation"]
+        // "Parks+and+Recreation"
+
         $('#TvShow-buttons-container').append(newButton);
     });
 
