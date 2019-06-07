@@ -29,4 +29,17 @@ $(document).ready(function () {
         $('#TvShow-buttons-container').append(newButton);
     });
 
-    
+    $('body').on('click', '.TvShow-buttons', function (event) {
+        $('.giphy-div').empty();
+        searchTv = $(this).attr('data-TvShow');
+        queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTv + "&limit=10" + "&api_key=B89D9mNHa0BwnABa2bpkoBj1xT8itF9V";
+        console.log(queryURL);
+        $.ajax({ url: queryURL, method: 'GET' })
+            .done(function (response) {
+                console.log(response.data);
+                for (var i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i]);
+                    $('.giphy-div').append("<div class='outer-container'><p class='title'>Rating: " + response.data[i].rating.toUpperCase() + "</p><div class='image-container'><img class='images-returned img-responsive center-block'" + "data-still='" + response.data[i].images.downsized_still.url + "'" + "data-animate='" + response.data[i].images.downsized.url + "'" + "data-state='still'" + "src='" + response.data[i].images.downsized_still.url + "'></div></div>");
+                    giphyArray.push(response.data[i].images.downsized.url);
+                }
+            });
