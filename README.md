@@ -29,4 +29,4 @@
 
 * [Raghav Shiv](https://github.com/rshiv7)
 
-### [Click to Play](https://rshiv7.github.io/Giftastic/)
+### [Click to Giphy Up !](https://rshiv7.github.io/Giftastic/)
