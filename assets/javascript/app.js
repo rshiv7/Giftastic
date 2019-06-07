@@ -44,6 +44,8 @@ $(document).ready(function () {
                 }
             });
 
+            
+
         }); // Closes TvShow-buttons onclick event
 
         $('body').on('click', '.images-returned', function (event) {
