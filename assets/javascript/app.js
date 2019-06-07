@@ -43,3 +43,21 @@ $(document).ready(function () {
                     giphyArray.push(response.data[i].images.downsized.url);
                 }
             });
+
+        }); // Closes TvShow-buttons onclick event
+
+        $('body').on('click', '.images-returned', function (event) {
+            var state = $(this).attr('data-state');
+            var thisImgDataStill = $(this).attr('data-still');
+            var thisImgDataAnimate = $(this).attr('data-animate');
+            if (state === 'still') {
+                $(this).attr('src', thisImgDataAnimate);
+                $(this).attr('data-state', 'animate');
+            }
+            if (state !== "still") {
+                $(this).attr('src', thisImgDataStill);
+                $(this).attr('data-state', 'still');
+            }
+        });  // Closes animal images onclick event
+    
+    }); // Closes jQuery .ready function
