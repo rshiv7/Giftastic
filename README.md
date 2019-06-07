@@ -1,5 +1,6 @@
 # Giftastic
 
+![alt text](assets/images/Giftastic_Screenshot.png "Crystal Game Screenshot")
 
 <hr>
 
@@ -8,6 +9,8 @@
 
 ### Using the GIPHY API to make a dynamic web page that populates with gifs of your choice.
 ### Choose from pre-existing titles or add your own.
+
+### Click once to start the animation. Click again to Stop it.
 
 
 <hr>
