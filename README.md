@@ -1,6 +1,6 @@
 # Giftastic
 
-![alt text](assets/images/Giftastic_Screenshot.png "Crystal Game Screenshot")
+![alt text](assets/images/Giftastic_Screenshot.png "Giftastic Screenshot")
 
 <hr>
 

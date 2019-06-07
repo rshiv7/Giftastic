@@ -60,6 +60,6 @@ $(document).ready(function () {
                 $(this).attr('src', thisImgDataStill);
                 $(this).attr('data-state', 'still');
             }
-        });  // Closes animal images onclick event
+        });  // Closes animated images onclick event
     
     }); // Closes jQuery .ready function
